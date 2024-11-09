@@ -8,7 +8,7 @@ BBB<-function(n,p,alpha,beta)
   print("Observed Proportion, Posterior Mean")
   p_hat_Post<-(alpha+xx)/(n+alpha+beta)
   print(c(p_hat,p_hat_Post))
-  x  <- seq(0, 1, 0.01)
+  x  <- seq(0, 1, 0.0)
   Prior <- dbeta(x,alpha,beta)
   Posterior <- dbeta(x,alpha+xx,n+beta-xx)
 
@@ -18,7 +18,7 @@ BBB<-function(n,p,alpha,beta)
   df2 <- reshape2::melt(data = df, id.vars = "x")
   
   # plot, using the aesthetics argument 'colour'
-  ggplot(data = df2, aes(x = x, y = value, colour = variable)) + geom_line() + geom_vline(xintercept=p_hat)
+  ggplot(data = df2, aes(x = x, y = value, colour = variable)) + geom_line(line=2) + geom_vline(xintercept=p_hat) #change linetype
 
  
 }
