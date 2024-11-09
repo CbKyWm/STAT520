@@ -8,7 +8,7 @@ BBB<-function(n,p,alpha,beta)
   print("Observed Proportion, Posterior Mean")
   p_hat_Post<-(alpha+xx)/(n+alpha+beta)
   print(c(p_hat,p_hat_Post))
-  x  <- seq(0, 1, 0.0)
+  x  <- seq(0, 1, 0.01)
   Prior <- dbeta(x,alpha,beta)
   Posterior <- dbeta(x,alpha+xx,n+beta-xx)
 
